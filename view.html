@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>View Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="output">
+        <h2>Your Submission</h2>
+
+        <p><b>Name:</b></p>
+        <p id="nameDisplay"></p>
+
+        <p><b>Email:</b></p>
+        <p id="emailDisplay"></p>
+
+        <p><b>Message:</b></p>
+        <p id="messageDisplay"></p>
+    </div>
+    <button onclick="window.location.href='index.html'">Go Back</button>
+
+    <script>
+        document.getElementById("nameDisplay").innerText =
+            localStorage.getItem("name");
+
+        document.getElementById("emailDisplay").innerText =
+            localStorage.getItem("email");
+
+        document.getElementById("messageDisplay").innerText =
+            localStorage.getItem("message");
+    </script>
+
+</body>
+</html>

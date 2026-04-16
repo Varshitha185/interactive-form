@@ -1,4 +1,3 @@
-/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
@@ -8,66 +7,76 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Body styling */
 body {
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    gap: 30px;
 }
 
-/* Form container */
+/* FORM */
 form {
     background: rgba(255, 255, 255, 0.08);
-    padding: 30px;
+    padding: 35px;
     border-radius: 20px;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     width: 320px;
     color: white;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Labels */
-label {
-    font-size: 14px;
-    font-weight: 400;
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Inputs + textarea */
-input[type="text"],
-input[type="email"],
-textarea {
+/* FLOATING INPUT */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    margin-bottom: 15px;
+    padding: 12px;
     border: none;
     border-radius: 10px;
     outline: none;
     background: rgba(255,255,255,0.15);
     color: white;
+}
+
+.input-group label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 14px;
+    color: #ccc;
+    pointer-events: none;
     transition: 0.3s;
 }
 
-/* Placeholder color */
-input::placeholder,
-textarea::placeholder {
-    color: #ddd;
+/* FLOAT EFFECT */
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+    top: -8px;
+    left: 10px;
+    font-size: 11px;
+    background: #243b55;
+    padding: 2px 6px;
+    border-radius: 6px;
 }
 
-/* Focus effect */
-input:focus,
-textarea:focus {
-    background: rgba(255,255,255,0.25);
-    transform: scale(1.02);
-}
-
-/* Submit button */
-input[type="submit"],
-input[value="Submit"] {
+/* BUTTON */
+button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 25px;
     background: linear-gradient(135deg, #ff7eb3, #ff758c);
@@ -77,31 +86,35 @@ input[value="Submit"] {
     transition: 0.3s;
 }
 
-/* Hover effect */
-input[value="Submit"]:hover {
+button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 118, 136, 0.4);
+    box-shadow: 0 5px 20px rgba(255, 118, 136, 0.5);
 }
 
-/* Output section */
+/* OUTPUT CARD */
 #output {
-    margin-left: 30px;
-    padding: 20px;
-    border-radius: 20px;
     background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(18px);
     color: white;
     width: 300px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Output text */
 #output p {
-    margin-bottom: 8px;
-    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-/* Layout wrapper (optional upgrade) */
-body > form,
-body > #output {
-    display: inline-block;
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -21,15 +21,33 @@
     <button onclick="window.location.href='index.html'">Go Back</button>
 
     <script>
-        document.getElementById("nameDisplay").innerText =
-            localStorage.getItem("name");
+         let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
 
-        document.getElementById("emailDisplay").innerText =
-            localStorage.getItem("email");
+    const container = document.getElementById("output");
 
-        document.getElementById("messageDisplay").innerText =
-            localStorage.getItem("message");
+    if (submissions.length === 0) {
+        container.innerHTML += "<p>No submissions yet 😔</p>";
+    } else {
+        submissions.forEach((data, index) => {
+            container.innerHTML += `
+                <div style="margin-bottom:20px; padding:10px; border-bottom:1px solid #ccc;">
+                    <p><b>#${index + 1}</b></p>
+                    <p><b>Name:</b> ${data.name}</p>
+                    <p><b>Email:</b> ${data.email}</p>
+                    <p><b>Message:</b> ${data.message}</p>
+                </div>
+            `;
+        });
+    }
     </script>
+    <button onclick="clearData()">Clear All 🗑️</button>
+
+<script>
+function clearData() {
+    localStorage.removeItem("submissions");
+    location.reload();
+}
+</script>
 
 </body>
 </html>

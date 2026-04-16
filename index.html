@@ -7,17 +7,25 @@
     </head>
     <body>
             <!-- Form  -->
-             <form  >
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name"><br><br>
+             <form  onsubmit="return false;">
+                 <h2>Drop a message</h2>
+                 <div class="input-group">
+        <input type="text" id="name" required>
+        <label>Name</label>
+    </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email"><br><br>
+    <div class="input-group">
+        <input type="email" id="email" required>
+        <label>Email</label>
+    </div>
 
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+    <div class="input-group">
+        <textarea id="message" rows="4" required></textarea>
+        <label>Message</label>
+    </div>
 
-                <input type="button" onclick="sample()" value="Submit">
+    <button type="button" onclick="sample()">Send</button>
+               
              </form>
              <div id="output">
                 <p> name : </p>
@@ -27,12 +35,7 @@
                 <p> message : </p>
                 <p id="messageDisplay"></p>
              </div>
-             <!-- <div>
-
-             </div>
-             <section>
-                
-             </section> -->
+             
              <script src="./script.js"></script>
 
     </body>

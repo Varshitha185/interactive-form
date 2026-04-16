@@ -1,0 +1,107 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styling */
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form container */
+form {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    width: 320px;
+    color: white;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Inputs + textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    transition: 0.3s;
+}
+
+/* Placeholder color */
+input::placeholder,
+textarea::placeholder {
+    color: #ddd;
+}
+
+/* Focus effect */
+input:focus,
+textarea:focus {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.02);
+}
+
+/* Submit button */
+input[type="submit"],
+input[value="Submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+input[value="Submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 118, 136, 0.4);
+}
+
+/* Output section */
+#output {
+    margin-left: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    color: white;
+    width: 300px;
+}
+
+/* Output text */
+#output p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Layout wrapper (optional upgrade) */
+body > form,
+body > #output {
+    display: inline-block;
+}
